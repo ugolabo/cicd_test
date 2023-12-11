@@ -19,7 +19,7 @@ def calculer_score(mot):
     # pour chercher dans le dictionnaire plus haut
     try:
         mot2 = mot.lower()
-    except:
+    except Exception:
         mot2 = ""
     # Créer un objet de départ
     points = 0
@@ -42,14 +42,14 @@ def calculer_score(mot):
             # lettre du mot évalué
             try:
                 points += score[lettre]
-            except:
+            except Exception:
                 points += 0
     # Retourner le total calculé
     return mot2 + ": " + str(points)
 
 
 if __name__ == "__main__":
-# Imprimer un espace et un diviseur
+    # Imprimer un espace et un diviseur
     print("")
     print("------------------------")
 
@@ -62,4 +62,3 @@ if __name__ == "__main__":
     print(calculer_score(""))
     print(calculer_score("123"))
     print(calculer_score(True))
-    
