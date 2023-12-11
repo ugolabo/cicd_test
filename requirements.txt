@@ -1,2 +1,5 @@
 # Build dependencies
-Flask==2.1.2
+
+# Code quality
+pylint==2.16.2
+flake8==6.0.0
