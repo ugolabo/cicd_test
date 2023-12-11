@@ -24,8 +24,8 @@ Tester un CI/CD.
 	- Consulter requirements.txt
 - https://docs.pytest.org/en/7.4.x/
 - `pytest` à la racine du répertoire du projet pour trouver le dossier tests/ et les fichiers de tests.
-- `pytest --cov=models` 
-- `pytest --cov=models --cov-report=html`
+- `pytest --cov=models` ou `pytest --cov=models tests/` avec couverture des tests.
+- `pytest --cov=models --cov-report=html` pour produire un report de couverture.
 
 ## Répertoire
 
