@@ -15,16 +15,16 @@ jobs:
         uses: actions/checkout@v3
 
      
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip wheel
           pip install -r requirements.txt
 
-      - name: Lint with flake8
+      - name: Lint with flake8 (not pylint)
         run: |
           flake8 models --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 models --count --max-complexity=10 --max-line-length=127 --statistics
       
-      - name: Run tests
+      - name: Run unit tests with pytest, use verbose, produce coverage report
         run: |
-          pytest --cov=models tests/
+          pytest -v --cov=models tests/

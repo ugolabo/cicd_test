@@ -13,19 +13,20 @@ Tester un CI/CD.
 
 ## Linter
 
-- Flake8 implanté avec ci-build.yaml dans le dossier .github/ comme CI.
+- flake8 implanté avec ci-build.yaml dans le dossier .github/ comme CI.
 	- Consulter requirements.txt
 - https://www.flake8rules.com/
 - `flake8 code.py` ou `python -m flake8 code.py`
 
 ## Test unitaires
 
-- Avec Python 3.10+, il faut utiliser PyTest (plutôt que Nose, Nose2, etc.).
+- Avec Python 3.10+, il faut utiliser pytest (plutôt que nose, nose2, etc.).
 	- Consulter requirements.txt
 - https://docs.pytest.org/en/7.4.x/
-- `pytest` à la racine du répertoire du projet pour trouver le dossier tests/ et les fichiers de tests.
-- `pytest --cov=models` ou `pytest --cov=models tests/` avec couverture des tests.
-- `pytest --cov=models --cov-report=html` pour produire un report de couverture.
+	- Attention à la façon de nommer les dossiers, les fichiers, les fonctions de test dans les fichiers.
+- `pytest -v` à la racine du répertoire du projet pour que pytest découvre le dossier tests/ et les fichiers de tests.
+- `pytest -v --cov=models` ou `pytest --cov=models tests/` avec couverture des tests.
+- `pytest -v --cov=models --cov-report=html` pour produire un report de couverture.
 
 ## Répertoire
 

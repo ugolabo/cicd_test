@@ -17,7 +17,10 @@ def calculer_score(mot):
     en fonction de la valeur de ses lettres."""
     # Mettre le mot en minuscule
     # pour chercher dans le dictionnaire plus haut
-    mot2 = mot.lower()
+    try:
+        mot2 = mot.lower()
+    except:
+        mot2 = ""
     # Créer un objet de départ
     points = 0
     # Pour chaque lettre l dans
@@ -37,20 +40,26 @@ def calculer_score(mot):
             # À la fin de la boucle, l'objet points
             # a accumulé toutes les valeurs de chaque
             # lettre du mot évalué
-            points += score[lettre]
+            try:
+                points += score[lettre]
+            except:
+                points += 0
     # Retourner le total calculé
     return mot2 + ": " + str(points)
 
 
+if __name__ == "__main__":
 # Imprimer un espace et un diviseur
-print("")
-print("------------------------")
+    print("")
+    print("------------------------")
 
-# Invoquer la fonction calculer_score
-# pour évaluer le score de mots...
-# Imprimer le résultat
-print(calculer_score("allo"))
-print(calculer_score("xylophone"))
-print(calculer_score("yak"))
-
-# Essayer avec d'autres mots (sans accent)
+    # Invoquer la fonction calculer_score
+    # pour évaluer le score de mots...
+    # Imprimer le résultat
+    print(calculer_score("allo"))
+    print(calculer_score("xylophone"))
+    print(calculer_score("yak"))
+    print(calculer_score(""))
+    print(calculer_score("123"))
+    print(calculer_score(True))
+    
