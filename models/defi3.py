@@ -1,7 +1,6 @@
 """
-COMPTEUR DE SCRABBLE
+Compteur de scrabble
 """
-
 # Voici la clé de correspondance (un dictionnaire)
 # lettre:valeur pour calculer le score d'un mot
 score = {"a": 1, "b": 3, "c": 3, "d": 2, "e": 1, "f": 4,
@@ -19,9 +18,6 @@ def calculer_score(mot):
     # Mettre le mot en minuscule
     # pour chercher dans le dictionnaire plus haut
     mot2 = mot.lower()
-    # Imprimer le mot et
-    # concaténer avec une petite chaine de caractères
-    print(mot2 + ":")
     # Créer un objet de départ
     points = 0
     # Pour chaque lettre l dans
@@ -43,7 +39,7 @@ def calculer_score(mot):
             # lettre du mot évalué
             points += score[lettre]
     # Retourner le total calculé
-    return points
+    return mot2 + ": " + str(points)
 
 
 # Imprimer un espace et un diviseur
