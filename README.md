@@ -6,6 +6,10 @@
 
 Tester un CI/CD.
 
+## Git
+
+`git push -u origin main`
+
 ## Plan
 
 Avec le commande (sur cmd) `tree /f`
