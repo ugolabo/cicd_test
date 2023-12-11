@@ -1,6 +1,6 @@
 # cicd_test
 
-![Build Status](https://github.com/ugolabo/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
+![Build Status](https://github.com/ugolabo/cicd_test/actions/workflows/ci-build.yaml/badge.svg)
 
 ## Description
 
