@@ -1,18 +1,27 @@
 name: CI Build
 
+# https://docs.github.com/en/actions
+# https://github.com/actions
 on:
   push:
+    branches:
+      - main
+  pull_request:  # when a branch is merged into the main branch
     branches:
       - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix
+        os: [ubuntu-latest, windows-latest, macOS-latest]
     container: python:3.11-alpine
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # https://github.com/actions/checkout, action.yml
 
       - name: Install Python dependencies
         run: |
