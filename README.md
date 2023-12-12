@@ -61,7 +61,7 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 	- https://flake8.pycqa.org/en/latest/index.html
 	- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
 - `pylint code.py` ou `python -m pylint code.py`.
-- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/pylint.html
+	- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/pylint.html
 - Avec le CI, le linting est automatisé.
 	- Consulter requirements.txt pour l'installation.
 	- Consulter le fichier .github/workflows/ci-build.yaml pour le démarrage.
