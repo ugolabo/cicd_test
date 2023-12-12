@@ -1,7 +1,5 @@
 name: CI Build
 
-# https://docs.github.com/en/actions
-# https://github.com/actions
 on:
   push:
     branches:
@@ -22,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3  # https://github.com/actions/checkout, action.yml
+        uses: actions/checkout@v3
 
       - name: Install Python dependencies
         run: |
