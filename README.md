@@ -19,7 +19,11 @@ Tester un CI/CD.
 - flake8.
 	- Consulter requirements.txt
 - https://www.flake8rules.com/
+- https://flake8.pycqa.org/en/latest/index.html
+- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
 - cmd: `flake8 code.py` ou `python -m flake8 code.py`
+- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/pylint.html
+- cmd: `pylint code.py` ou `python -m pylint code.py`
 
 ## Test unitaires
 
