@@ -12,7 +12,8 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    # on many OS if the container allows it
     #runs-on: ${{matrix.os}}
     #strategy:
       #matrix:
@@ -34,5 +35,18 @@ jobs:
           flake8 models --count --max-complexity=10 --max-line-length=127 --statistics
       
       - name: Run unit tests with pytest, use verbose, produce coverage report
-        run: |
-          pytest -v --cov=models tests/
+        run: pytest -v --cov=models tests/
+      
+      # On ubuntu-latest
+      # the container exists, see above
+      
+      # On windows-latest, macos-latest...
+      #- name: Build and push Docker image 
+        #uses: mr-smithers-excellent/docker-build-push@v4
+        #with:
+          #image: my-docker-hub-repo/my-image-name
+          #registry: docker.io
+          # repo Settings, Secrets
+          #username: ${{ secrets.DOCKER_USERNAME }}
+          #password: $ {{ secrets.DOCKER_PASSWORD }}
+          
