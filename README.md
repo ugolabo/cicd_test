@@ -57,10 +57,12 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 
 - Avant le CI, le linting est fait avec les modules flake8 et pylint.
 - `flake8 code.py` ou `python -m flake8 code.py`.
+	- https://pypi.org/project/flake8/
 	- https://www.flake8rules.com/
 	- https://flake8.pycqa.org/en/latest/index.html
 	- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/flake8.html
 - `pylint code.py` ou `python -m pylint code.py`.
+	- https://pypi.org/project/pylint/
 	- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/pylint.html
 - Avec le CI, le linting est automatisé.
 	- Consulter requirements.txt pour l'installation.
@@ -69,11 +71,11 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 ## Tests unitaires
 
 - Avant le CI, les tests unitaires sont faits avec le module pytest.
-	- Avec Python 3.10+, il faut utiliser le module pytest plutôt que nose, nose2, etc.
+	- Avec Python 3.10+, il faut utiliser le module pytest (plus moderne, plus large communauté, capable de faire des tests d'intégration) plutôt que les modules nose et nose2 qui bonifient le module unittest.
 - `pytest -v` à la racine du répertoire du projet pour que pytest découvre le dossier tests/ et les fichiers de tests.
 - `pytest -v --cov=models` ou `pytest --cov=models tests/` avec la couverture des tests.
 - `pytest -v --cov=models --cov-report=html` pour produire un report de couverture des tests.
-	- https://docs.pytest.org/en/7.4.x/
+	- https://pypi.org/project/pytest/
 	- Attention à la façon de nommer les dossiers, les fichiers, les fonctions de test dans les fichiers.
 - Avec le CI, les tests unitaires sont automatisés.
 	- Consulter requirements.txt pour l'installation.
