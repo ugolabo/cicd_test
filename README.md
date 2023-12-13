@@ -68,7 +68,7 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 	- Consulter requirements.txt pour l'installation.
 	- Consulter le fichier .github/workflows/ci-build.yaml pour le démarrage.
 
-## Tests unitaires
+### Tests unitaires
 
 - Avant le CI, les tests unitaires sont faits avec le module pytest.
 	- Avec Python 3.10+, il faut utiliser le module pytest (plus moderne, plus large communauté, capable de faire des tests d'intégration) plutôt que les modules nose et nose2 qui bonifient le module unittest.
