@@ -38,7 +38,7 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 
 - Nom (`name`) du CI: CI Build
 - Démarrage (`on`) du CI:
-	- `git push` vers la branche main.
+	- `git push -u origin main`.
 	- pull request suivi d'un merge avec la branche main.
 	- Autres actions: https://docs.github.com/en/actions
 	- Autres actions: https://github.com/actions
