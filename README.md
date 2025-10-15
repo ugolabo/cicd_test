@@ -4,6 +4,8 @@
 
 ## Description
 
+test
+
 Tester un CI sur Github (la 1re partie d'un CI/CD).
 
 - Le projet est un code source Python à une fonction qui calcule la valeur d'un mot selon la valeur des lettres du Scrabble.
