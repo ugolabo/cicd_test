@@ -4,7 +4,7 @@
 
 Le projet implante la 1re partie (CI) d'un processus CI/CD en Python.
 
-<img src="img/cicd_python_linting_tests.jpg" alt="" width="800px">
+<img src="img/cicd_python_linting_tests.jpg" alt="" width="300px">
 
 ## Mise en place et structure
 
