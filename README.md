@@ -1,40 +1,41 @@
-# cicd_test
+# CI/CD: fichier Python, linting et tests unitaires
 
 ![Build Status](https://github.com/ugolabo/cicd_test/actions/workflows/ci-build.yaml/badge.svg)
 
-## Description
+Le projet implante la 1re partie (CI) d'un processus CI/CD en Python.
 
-Tester un CI sur Github (la 1re partie d'un CI/CD).
+<img src="img/cicd_python_linting_tests.jpg" alt="" width="800px">
 
-- Le projet est un code source Python à une fonction qui calcule la valeur d'un mot selon la valeur des lettres du Scrabble.
-- Le code source est accompagné d'un autre code source pour faire les tests unitaires.
-- Le CI est automatisé par un fichier ci-build.yaml qui déclenche le processus de CI.
-	- Consulter le fichier dans le dossier .github/workflows/.
-	- Consulter le menu Actions dans GitHub; vers la gauche du menu Code.
-- Il n'y a pas de 2e partie (CD d'un CI/CD), car le projet ne se prête pas à un déploiement. Ce n'est pas un site web, une application mobile, un API ou un projet interactif.
-	
-## Répertoire
+## Mise en place et structure
 
-Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
+1. Cloner le repo sur son ordinateur.
+1. Le projet fonctionne en Python 3.11.
+1. Installer les modules du fichier 'requirements.txt'. Le fichier est à la racine du projet.
 
-```text
-├───.github
-│   └───workflows
-├───.pytest_cache
-│   └───v
-│       └───cache
-├───models
-│   └───__pycache__
-└───tests
-    └───__pycache__
+
+### Organisation du répertoire
+
+Le projet utilise une structure pour séparer le code source du code source de tests unitaires avec le module pytest, les résultats des tests et le YAML du CI.
+
+```
+───cicd_python_linting_pytest
+    ├── .github
+    │   └── workflows
+    ├── img
+    ├── models
+    └── tests
 ```
 
-## Git
+- Tester manuellement le processus en local avant d'automatiser le processus sur GitHub.
+- Le code source ('models/defi3.py') à une fonction calcule la valeur d'un mot selon la valeur des lettres du Scrabble.
+- Le code source de test ('tests/test_defi3.py') fait les tests unitaires avec pytest.
+- Le CI est automatisé par un fichier '.github/workflows/ci-build.yaml' qui déclenche le processus CI/CD.
+	- Consulter le menu Actions dans GitHub; vers la gauche du menu Code.
+- Il n'y a pas la 2e partie (CD) d'un processus CI/CD, car le projet ne se prête pas à un déploiement. Ce n'est pas un site web ni une application mobile, par exemple.
+-  `git push -u origin main` démarrer le processus CI/CD.
+	- Consulter le fichier '.github/workflows/ci-build.yaml' pour le démarrage.
 
-- Avec le Git bash: `git push -u origin main` pour démarrer le CI.
-	- Consulter le fichier .github/workflows/ci-build.yaml pour le démarrage.
-
-## ci-build.yaml
+### 'ci-build.yaml'
 
 - Nom (`name`) du CI: CI Build
 - Démarrage (`on`) du CI:
@@ -51,11 +52,11 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 		- Installer les modules Python ou les dépendances.
 		- Exécuter le linting avec le module flake8 uniquement.
 		- Exécuter les tests unitaires avec le module pytest.
-	- Il n'y a pas d'étapes pour déployer vers un cloud ou autre (CD), car le projet ne se prête pas à un déploiement. Ce n'est pas un site web, une application mobile, un API ou un projet interactif.
+	- Il n'y a pas d'étapes pour déployer vers un cloud ou autre (CD), car le projet ne se prête pas à un déploiement.
 
 ### Linting
 
-- Avant le CI, le linting est fait avec les modules flake8 et pylint.
+- Avant le CI, le linting est déclenché manuellement avec les modules flake8 et Pylint.
 - `flake8 code.py` ou `python -m flake8 code.py`.
 	- https://pypi.org/project/flake8/
 	- https://www.flake8rules.com/
@@ -64,19 +65,15 @@ Avec les commandes (dans cmd) `tree /f` ou `tree` pour les dossiers seulement.
 - `pylint code.py` ou `python -m pylint code.py`.
 	- https://pypi.org/project/pylint/
 	- https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/python/linting/pylint.html
-- Avec le CI, le linting est automatisé.
-	- Consulter requirements.txt pour l'installation.
-	- Consulter le fichier .github/workflows/ci-build.yaml pour le démarrage.
+- Avec le CI, le linting avec flake8 seulement est automatisé.
 
 ### Tests unitaires
 
-- Avant le CI, les tests unitaires sont faits avec le module pytest.
+- Avant le CI, les tests unitaires sont déclenchés manuellement avec le module pytest.
 	- Avec Python 3.10+, il faut utiliser le module pytest (plus moderne, plus large communauté, capable de faire des tests d'intégration) plutôt que les modules nose et nose2 qui bonifient le module unittest.
-- `pytest -v` à la racine du répertoire du projet pour que pytest découvre le dossier tests/ et les fichiers de tests.
-- `pytest -v --cov=models` ou `pytest --cov=models tests/` avec la couverture des tests.
-- `pytest -v --cov=models --cov-report=html` pour produire un report de couverture des tests.
+- `pytest -v` à la racine du répertoire du projet pour que pytest découvre le dossier 'tests' et les fichiers de tests.
+- `pytest -v --cov=models` ou `pytest --cov=models tests/` ajoute la couverture des tests.
+- `pytest -v --cov=models --cov-report=html` ajoute la couverture des tests et produit un report de couverture des tests.
 	- https://pypi.org/project/pytest/
 	- Attention à la façon de nommer les dossiers, les fichiers, les fonctions de test dans les fichiers.
 - Avec le CI, les tests unitaires sont automatisés.
-	- Consulter requirements.txt pour l'installation.
-	- Consulter le fichier .github/workflows/ci-build.yaml pour le démarrage.
