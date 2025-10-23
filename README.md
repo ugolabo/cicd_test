@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/ugolabo/cicd_test/actions/workflows/ci-build.yaml/badge.svg)
 
-Le projet implante la première partie (CI ou *Continuous Integration*) d'un processus CI/CD en Python.
+Le projet implante la première partie (CI ou Continuous Integration) d'un processus CI/CD en Python.
 
 <img src="img/cicd_python_linting_tests.jpg" alt="" width="300px">
 
@@ -34,7 +34,7 @@ Le projet utilise une structure pour séparer le code source des tests unitaires
 	- Les modules nose et nose2 bonifiaient le module unittest.
 - Le CI est automatisé par le YAML '.github/workflows/ci-build.yaml' qui déclenche le processus CI/CD sur GitHub (dans le repo, à l'onglet Actions, Workflows).
 	- Le fonctionnement des containers comme Docker est similaire.
-- Il n'y a pas la deuxième partie (CD ou *Continuous Deployment*) du processus CI/CD, car le projet ne se prête pas à un déploiement comme un site web ou une application mobile, par exemple.
+- Il n'y a pas la deuxième partie (CD ou Continuous Deployment) du processus CI/CD, car le projet ne se prête pas à un déploiement comme un site web ou une application mobile, par exemple.
 	- C'est ce que tout concepteur recherche : automatiser la séquence de travail, de la conception jusqu'au déploiement d'une nouvelle version du projet.
 	- Il y a beaucoup de diversité avec les processus CI/CD. Ce cas de figure se limite au CI, par exemple.
 	- Les grands services comme Gitlab, Bitbucket ou un service sur les plateformes de services cloud (AWS, Azure, GC, Alibaba Cloud, IMB Cloud, Tencent Cloud, Red Hat OpenShift, etc.) ont l'équivalent de l'onglet Actions (Workflows) et un YAML pilote un processus. 
