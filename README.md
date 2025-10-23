@@ -38,7 +38,9 @@ Le projet utilise une structure pour séparer le code source des tests unitaires
 	- C'est ce que tout concepteur recherche : automatiser la séquence de travail, de la conception jusqu'au déploiement d'une nouvelle version du projet.
 	- Il y a beaucoup de diversité avec les processus CI/CD. Ce cas de figure se limite au CI, par exemple.
 	- Les grands services comme Gitlab, Bitbucket ou un service sur les plateformes de services cloud (AWS, Azure, GC, Alibaba Cloud, IMB Cloud, Tencent Cloud, Red Hat OpenShift, etc.) ont l'équivalent de l'onglet Actions (Workflows) et un YAML pilote un processus. 
--  `git push -u origin main` démarrer le processus CI/CD sur GitHub (Workflows).
+-  `git push -u origin main` ou `git push` déclenche le processus CI/CD sur GitHub (Workflows).
+- Sur GitHub, explorer l'onglet Actions (Workflows) suivant le déclenchement (`git push`).
+- Est-ce que le processus a abouti ? Sinon, le processus a attrapé une erreur. L'automatisation évite une inspection fastidieuse même si sa mise en place est fastidieuse. À long terme, l'automatisation fait gagner du temps.
 
 ### YAML 'ci-build.yaml'
 
